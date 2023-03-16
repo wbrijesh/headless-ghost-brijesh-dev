@@ -10,6 +10,12 @@ processes = []
   image = "ghost:5.38.0"
 
 [env]
+  database__client = "sqlite3"  
+  database__connection__filename = "content/data/ghost.db"  
+
+[mounts]
+  source="data"
+  destination="/var/lib/ghost/content"
 
 [experimental]
   auto_rollback = true
